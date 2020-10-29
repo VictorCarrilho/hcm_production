@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Form, Input } from '@rocketseat/unform';
+import { Form } from '@rocketseat/unform';
 
 // Função que o saga esta esperando que seja disparada para realizar a autenticação //
 import { signInRequest } from '../../store/modules/auth/actions';
@@ -40,11 +40,11 @@ const Login: React.FC = () => {
             <img className="wave" src={wave} />
             <LoginContainer>
                 <DivImageLeft>
-                    <img src={logo} />
+                    <img src={logo} alt="logo" />
                 </DivImageLeft>
                 <LoginContent>
                     <Form onSubmit={handleSubmit}>
-                        <img src={avatar} />
+                        <img src={avatar} alt="avatar" />
 
                         <TitleH2>Welcome</TitleH2>
 

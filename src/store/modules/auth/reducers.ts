@@ -25,6 +25,7 @@ export default function auth(state = INITIAL_STATE, action: any) {
             return produce(state, (draft) => {
                 draft.loading = false;
                 draft.isLogged = false;
+                draft.token = null
             });
 
         default:

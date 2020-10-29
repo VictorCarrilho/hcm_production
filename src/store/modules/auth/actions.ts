@@ -1,3 +1,9 @@
+interface PropsUser {
+    login: String
+    name: String
+}
+
+
 // Function que é executada ao tentar realizar o login \\
 export function signInRequest(email: string, password: string) {
     return {
@@ -6,9 +12,8 @@ export function signInRequest(email: string, password: string) {
     }
 }
 
-
 // Function que é executada caso o login tenha sido realizado com sucesso \\
-export function signInSuccess(token: String, user: String[]) {
+export function signInSuccess(token: String, user: PropsUser) {
     return {
         type: '@auth/SIGN_IN_SUCCESS',
         payload: { token, user }

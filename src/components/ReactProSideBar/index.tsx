@@ -11,7 +11,7 @@ import {
 
 import { Link } from 'react-router-dom';
 import { FcBusinessman, FcComboChart } from 'react-icons/fc';
-import my_img from '../../../assets/users-img/42130424805.jpeg'
+import my_img from '../../assets/users-img/42130424805.jpeg'
 
 interface Props {
     menuOpen: Boolean;

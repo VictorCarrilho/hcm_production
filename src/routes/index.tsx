@@ -6,7 +6,7 @@ import RouteWrapper from './Route';
 import SignIn from '../pages/Login';
 import Home from '../pages/Home';
 import Dashboard from '../pages/Dashboard';
-
+import Profile from '../pages/Profile';
 
 function Routes() {
     return (
@@ -14,6 +14,7 @@ function Routes() {
             <RouteWrapper component={Home} path="/" exact />
             <RouteWrapper component={SignIn} path="/login" exact />
             <RouteWrapper component={Dashboard} path="/dashboard" exact isPrivate={true} />
+            <RouteWrapper component={Profile} path="/my-profile" isPrivate={true} />
 
             <Route
                 component={

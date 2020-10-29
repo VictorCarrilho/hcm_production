@@ -5,10 +5,11 @@ import api from '../../../services/api';
 import history from '../../../services/history';
 
 import { signInSuccess, signFailure } from './actions';
+import { idText } from 'typescript';
 
 export function* signIn({ payload }: any) {
     try {
-        const { email, password } = payload;
+        /*const { email, password } = payload;
         const response = yield call(api.post, 'oauth/token', {
             email,
             password
@@ -28,9 +29,20 @@ export function* signIn({ payload }: any) {
             toast.error('Usuário não é um prestador de serviços.');
             yield put(signFailure());
             return;
+        }*/
+
+        const { email, password } = payload;
+        if (email !== 'victorcarrilho@gmail.com' && password !== "carrilho") {
+            toast.error('Usuário e/ou senha inválidos.');
+            yield put(signFailure());
+            return;
         }
 
-
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIiLCJpYXQiOjE2MDM5OTM5MDcsImV4cCI6MTYzNTUyOTkwNywiYXVkIjoiIiwic3ViIjoiIiwibG9naW4iOiJ2aWN0b3JjYXJyaWxob0BnbWFpbC5jb20iLCJuYW1lIjoiVmljdG9yIENhcnJpbGhvIn0.eMjsiTifvJs6B7P6An5Vs9jQMoSZaJ2PJ_U_aVp56Lk";
+        const user = {
+            "login": 'victorcarrilho@gmail.com',
+            "name": 'Victor Carrilho'
+        }
 
         // Definir um header padrão nas requisições API, enviando sempre o token do usuário //
         api.defaults.headers['Authorization'] = `Bearer ${token}`;

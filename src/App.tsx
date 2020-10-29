@@ -9,6 +9,7 @@ import history from './services/history';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import GlobalStyle from './styles/global';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Provider store={store}>
             <PersistGate persistor={persistor}>
                 <Router history={history}>
+                    <GlobalStyle />
                     <Routes />
                     <ToastContainer autoClose={3000} />
                 </Router>

@@ -12,7 +12,7 @@ import {
 } from './style';
 
 import { HiOutlineMailOpen } from 'react-icons/hi';
-import my_img from '../../../../assets/users-img/42130424805.jpeg';
+import my_img from '../../../assets/users-img/42130424805.jpeg';
 
 
 const DadosSection: React.FC = () => {
