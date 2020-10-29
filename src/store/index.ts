@@ -12,7 +12,7 @@ import rootSaga from './modules/rootSaga';
 const persistConfig = {
     key: 'hcm_production',
     storage,
-    whitelist: ['auth']
+    whitelist: ['company', 'auth']
 };
 
 const sagaMiddleware = createSagaMiddleware();

@@ -7,12 +7,18 @@ import { Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
+
+
 function App() {
     return (
         <Provider store={store}>
             <PersistGate persistor={persistor}>
                 <Router history={history}>
                     <Routes />
+                    <ToastContainer autoClose={3000} />
                 </Router>
             </PersistGate>
         </Provider>

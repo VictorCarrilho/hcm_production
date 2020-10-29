@@ -1,7 +1,5 @@
 // Function que é executada ao tentar realizar o login \\
 export function signInRequest(email: string, password: string) {
-    console.log('signInRequest');
-
     return {
         type: '@auth/SIGN_IN_REQUEST',
         payload: { email, password }
@@ -11,8 +9,6 @@ export function signInRequest(email: string, password: string) {
 
 // Function que é executada caso o login tenha sido realizado com sucesso \\
 export function signInSuccess(token: String, user: String[]) {
-    console.log('signInSuccess');
-
     return {
         type: '@auth/SIGN_IN_SUCCESS',
         payload: { token, user }
@@ -21,8 +17,6 @@ export function signInSuccess(token: String, user: String[]) {
 
 // Function que é executada caso o login tenha realizado com erros \\
 export function signFailure() {
-    console.log('signFailure');
-
     return {
         type: '@auth/SIGN_FAILURE'
     }
@@ -33,5 +27,12 @@ export function signFailure() {
 export function signOut() {
     return {
         type: '@auth/SIGN_OUT'
+    }
+}
+
+
+export function companyUser() {
+    return {
+        type: '@auth/SET_COMPANY'
     }
 }

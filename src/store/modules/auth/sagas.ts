@@ -9,7 +9,7 @@ import { signInSuccess, signFailure } from './actions';
 export function* signIn({ payload }: any) {
     try {
         const { email, password } = payload;
-        const response = yield call(api.post, 'autenticate', {
+        const response = yield call(api.post, 'oauth/token', {
             email,
             password
         });
@@ -45,34 +45,6 @@ export function* signIn({ payload }: any) {
     }
 }
 
-export function* signUp({ payload }: any) {
-    try {
-        const { name, email, password } = payload;
-
-        const response = yield call(api.post, 'users', {
-            name,
-            email,
-            password,
-            provider: true
-        });
-
-        const { success, message } = response.data;
-
-        if (!success) {
-            toast.error(message);
-            yield put(signFailure());
-            return;
-        }
-
-
-        history.push('/');
-
-    } catch (err) {
-        toast.error('Falha no cadastro, verifique seus cadastro.');
-        yield put(signFailure());
-    }
-
-}
 
 export function setToken({ payload }: any) {
     if (!payload) return;
@@ -93,6 +65,5 @@ export function signOut() {
 export default all([
     takeLatest('persist/REHYDRATE', setToken),
     takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-    takeLatest('@auth/SIGN_UP_REQUEST', signUp),
     takeLatest('@auth/SIGN_OUT', signOut)
 ]);

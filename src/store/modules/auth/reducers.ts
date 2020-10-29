@@ -24,11 +24,6 @@ export default function auth(state = INITIAL_STATE, action: any) {
         case '@auth/SIGN_IN_FAILURE':
             return produce(state, (draft) => {
                 draft.loading = false;
-            });
-
-        case '@auth/SIGN_OUT':
-            return produce(state, (draft) => {
-                draft.token = null;
                 draft.isLogged = false;
             });
 

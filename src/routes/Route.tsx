@@ -3,17 +3,24 @@ import { Route, Redirect } from 'react-router-dom';
 import { store } from '../store';
 
 
-export default function RouteWrapper({ component: Component, isPrivate = false, path, ...rest }: any) {
+export default function RouteWrapper({ component: Component, isPrivate = false, path, params, ...rest }: any) {
     const { isLogged } = store.getState().auth;
+    const { companyName, companyToken } = store.getState().company;
 
-    if (!isLogged && isPrivate) {
-        return <Redirect to="/login" />
+    // O usuário deve selecionar primeiro a empresa \\
+    if (!companyName && !companyToken && path != "/") {
+        return <Redirect to='/' />
     }
 
-    // Se o usuário ESTIVER logado e tentar acessar a rota login, enviar para o dashboard \\
-    if (isLogged && !isPrivate) {
-        return <Redirect to="/" />
+    // Se o usuário não estiver logado e a pagina for privada \\
+    if (!isLogged && isPrivate && companyName) {
+        return <Redirect to='/login' />
     }
+
+    if (isLogged && !isPrivate && companyName) {
+        return <Redirect to='/dashboard' />
+    }
+
 
     return (<Route {...rest}
         render={
