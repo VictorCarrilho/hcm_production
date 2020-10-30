@@ -3,7 +3,9 @@ import { Container } from './style';
 
 import {
     Col,
-    Row
+    Row,
+    Image,
+    Card
 } from 'react-bootstrap';
 
 import img1 from '../../assets/img/img-1.svg';
@@ -11,26 +13,24 @@ import img1 from '../../assets/img/img-1.svg';
 const DashboardCards = () => {
     return (
         <Container>
-            <Row>
-                <Col xl="6" className="col-md-6-custom pr-1">
-                    <div className="card">
-                        <div className="card-body">
-                            <Row>
+            <Row className="">
+                <Col xl="6" className="pb-3 mb-3">
+                    <Card>
+                        <Card.Body>
+                            <Row className="row-card-body">
                                 <Col xl="7">
-                                    <div className="mb-3">
+                                    <Card.Title>
                                         <b className="title-custom">TOTAL SALES</b>
-                                    </div>
+                                    </Card.Title>
 
-                                    <div className="d-flex mb-1 flex-row">
+                                    <Card.Text className="d-flex mb-1 flex-row">
                                         <h4 className="mb-0">$64,559.25</h4>
-                                        <div className="mb-3">
-                                            <b className="title-custom b-custom">
-                                                33.21% compare to last week
-                                                </b>
-                                        </div>
-                                    </div>
 
-                                    <hr className="bg-custom" />
+                                        <b className="title-custom b-custom">
+                                            33.21% compare to last week
+                                                </b>
+                                        <hr className="bg-custom" />
+                                    </Card.Text>
 
                                     <Row>
                                         <Col md="6" className="col-center-custom">
@@ -52,92 +52,54 @@ const DashboardCards = () => {
                                     </Row>
                                 </Col>
                                 <Col xl="5">
-                                    <img src={img1} alt="" height="150px" className="d-none d-lg-block" />
+                                    <Image src={img1} rounded />
                                 </Col>
                             </Row>
-                        </div>
-                    </div>
+                        </Card.Body>
+                    </Card>
                 </Col>
 
-                <Col md="6" className="col-md-6-custom">
-                    <Row>
+                <Col md="6" className="pb-3 mb-3 teste">
+                    <Row className="teste">
                         <Col sm="6" className="pr-1">
-                            <div className="card">
-                                <div className="card-body">
-                                    <div className="mb-3">
-                                        <b className="title-custom">TOTAL SALES</b>
-                                    </div>
+                            <Card>
+                                <Card.Body>
+                                    <Card.Title>
+                                        <b className="title-custom fs-1">TOTAL SALES</b>
+                                    </Card.Title>
 
-                                    <div className="d-flex mb-1 flex-row">
+                                    <Card.Text>
                                         <h4 className="mb-0">$64,559.25</h4>
-                                        <div className="mb-3">
-                                            <b className="title-custom b-custom">
-                                                33.21% compare to last week
-                                                </b>
-                                        </div>
-                                    </div>
-                                    <hr className="bg-custom" />
-                                    <Row>
-                                        <Col md="6" className="col-center-custom">
-                                            <div className="f-s-12 title-custom b-custom">
-                                                Total order
-                                                </div>
+                                        <b className="title-custom b-custom">
+                                            33.21% compare to last week
+                                        </b>
+                                        <hr className="bg-custom" />
+                                    </Card.Text>
 
+
+                                    <Row className="row-card-body">
+                                        <Col md="6" className="col-center-custom pb-3">
+                                            <div className="title-custom b-custom">
+                                                Total sales
+                                                </div>
                                             <div className="f-s-18 m-b-5 p-b-1 info-card">1,568</div>
                                         </Col>
 
-                                        <Col md="6">
+                                        <Col md="6" className="col-center-custom pb-3">
                                             <div className="f-s-12 title-custom b-custom">
-                                                Sales per order
+                                                Per order
                                             </div>
                                             <div className="f-s-18 m-b-5 p-b-1 info-card">
                                                 $41.20
                                             </div>
                                         </Col>
                                     </Row>
-
-                                </div>
-                            </div>
+                                </Card.Body>
+                            </Card>
                         </Col>
 
-                        <Col sm="6" className="pl-1">
-                            <div className="card">
-                                <div className="card-body">
-                                    <div className="mb-3">
-                                        <b className="title-custom">TOTAL SALES</b>
-                                    </div>
+                        <Col sm="6" className="">
 
-                                    <div className="d-flex mb-1 flex-row">
-                                        <h4 className="mb-0">$64,559.25</h4>
-                                        <div className="mb-3">
-                                            <b className="title-custom b-custom">
-                                                33.21% compare to last week
-                                                </b>
-                                        </div>
-                                    </div>
-                                    <hr className="bg-custom" />
-                                    <Row>
-                                        <Col md="6" className="col-center-custom">
-                                            <div className="f-s-12 title-custom b-custom">
-                                                Total order
-                                                </div>
-
-                                            <div className="f-s-18 m-b-5 p-b-1 info-card">1,568</div>
-                                        </Col>
-
-                                        <Col md="6">
-                                            <div className="f-s-12 title-custom b-custom">
-                                                Sales per order
-                                            </div>
-                                            <div className="f-s-18 m-b-5 p-b-1 info-card">
-                                                $41.20
-                                            </div>
-                                        </Col>
-                                    </Row>
-
-
-                                </div>
-                            </div>
                         </Col>
                     </Row>
                 </Col>

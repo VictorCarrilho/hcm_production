@@ -11,14 +11,20 @@ export const Container = styled.div`
     }
     
     img {
-        max-width: 100%;
+        max-width: 200px;
+        height: 200px;
     }
 
     .card-body {
-        padding: 10px;        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px 0px 20px;
+
 
         .title-custom {
             color: ${props => props.theme.colors.title_color} !important;
+            font-size: 16px;
         }
 
         .b-custom {
@@ -42,15 +48,12 @@ export const Container = styled.div`
             font-weight: 600;
         }
 
-        .col-center-custom {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-direction: column;
+        .row-card-body, .teste {
+            width: 100%;
+            height: 100%;
+            margin: 0;
         }
+
+
     }
-    
-
-    
-
 `;
