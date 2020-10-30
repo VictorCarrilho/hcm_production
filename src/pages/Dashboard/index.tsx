@@ -10,8 +10,12 @@ import {
 } from 'react-icons/fc';
 
 import {
-    Breadcrumb
+    Breadcrumb,
+    Col,
+    Row
 } from 'react-bootstrap';
+
+import DashboardCards from '../../components/DashboardCards';
 
 const Dashboard = () => {
     return (
@@ -24,7 +28,7 @@ const Dashboard = () => {
             </Breadcrumb>
 
             <MainWrapper className="card">
-                Atalhos
+                <DashboardCards />
             </MainWrapper>
         </Container>
     )

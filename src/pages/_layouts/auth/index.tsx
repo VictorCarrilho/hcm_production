@@ -1,7 +1,11 @@
 import React from 'react';
 import { Container } from './style';
 
-const LayoutAuth: React.FC = ({ children }) => {
+interface Props {
+    toggleTheme(): void;
+}
+
+const LayoutAuth: React.FC<Props> = ({ children }) => {
     return (
         <Container>
             {children}

@@ -23,13 +23,8 @@ export function* signIn({ payload }: any) {
             return;
         }
 
-        const { token, user } = response.data;
-
-        if (!user.provider) {
-            toast.error('Usuário não é um prestador de serviços.');
-            yield put(signFailure());
-            return;
-        }*/
+        console.log(response.data);
+        return;*/
 
         const { email, password } = payload;
         if (email !== 'victorcarrilho@gmail.com' && password !== "carrilho") {

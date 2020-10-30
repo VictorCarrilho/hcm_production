@@ -34,10 +34,3 @@ export function signOut() {
         type: '@auth/SIGN_OUT'
     }
 }
-
-
-export function companyUser() {
-    return {
-        type: '@auth/SET_COMPANY'
-    }
-}

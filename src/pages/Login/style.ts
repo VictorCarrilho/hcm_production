@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
-import { theme } from '../../styles/global';
 import { darken } from 'polished';
 import { Input as InputRocketSeat } from '@rocketseat/unform';
 
@@ -25,7 +24,7 @@ export const Container = styled.div`
 
     .teste {
         display: flex;
-        justify-content: space-between; 
+        justify-content: space-between;
     }
 `;
 
@@ -102,7 +101,7 @@ export const LoginContent = styled.div`
 
 export const TitleH2 = styled.h2`
     margin: 15px 0;
-    color: ${theme.colors.primayColor};
+    color: ${props => props.theme.colors.primary};
     text-transform: uppercase;
     font-size: 2.9rem;
 
@@ -162,7 +161,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const DivIcon = styled.div`
-    color: ${theme.colors.primayColor};
+    color: ${props => props.theme.colors.primary};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,7 +182,7 @@ export const LoginH5 = styled.h5`
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: ${theme.colors.primayColor};
+    color: ${props => props.theme.colors.primary};
     font-size: 18px;
     transition: .3s;
 `;
